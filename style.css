@@ -50,3 +50,11 @@ h1 {
     flex-wrap: wrap;
     gap: 10px;
 }
+
+.expression-display {
+    text-align: end;
+}
+
+.answer-display {
+    text-align: end;
+}

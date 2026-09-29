@@ -17,6 +17,7 @@ function multiply(num1, num2) {
 }
 
 function updateFirstOperandVar(number) {
+           firstoperand = '' 
    return  firstoperand += number
 }
 
@@ -54,7 +55,7 @@ function operate(operator, num1, num2) {
 }
 
 
-let firstoperand = ''
+let firstoperand = '0'
 let operatorVariable = ''
 let secondoperand = ''
 let numberbtncontainer = document.querySelector('.numberbtn-container')
@@ -62,6 +63,8 @@ let display = document.querySelector('.display')
 let operatorContainer = document.querySelector('.operator-btn')
 let expressionDisplay = document.querySelector('.expression-display')
 let answerDisplay = document.querySelector('.answer-display')
+
+expressionDisplay.textContent = firstoperand
 
 numberbtncontainer.addEventListener('click', function(e) {
     switch (e.target.textContent) {
@@ -197,10 +200,10 @@ numberbtncontainer.addEventListener('click', function(e) {
             
         case 'C':
             updateFirstOperandVar('CL')
-            firstoperand = ''
+            firstoperand = '0'
             secondoperand = ''
             operatorVariable = ''
-            expressionDisplay.textContent = ''
+            expressionDisplay.textContent = firstoperand
             answerDisplay.textContent = ''
             break;
             
