@@ -2,21 +2,35 @@
 function add(num1, num2) {
    return num1 + num2
 }
+
 function subtract(num1, num2) {
     return num1 - num2
 }
+
 function divide(num1, num2) {
     return num1 / num2
 }
+
 function multiply(num1, num2) {
     return num1 * num2
 }
 
-let firstoperand
-let operator
-let secondoperand
-let numberbtncontainer = document.querySelector('.numberbtn-container')
-let display = document.querySelector('.display')
+function updateFirstOperandVar(number) {
+   return  firstoperand += number
+}
+
+function updateOperatorOperandVar(operator) {
+    return operatorVariable = operator 
+}
+
+function updateSecondOperandVar(number) {
+    return secondoperand += number
+}
+
+function displaySecondVar(number) {
+      updateSecondOperandVar(number)
+      expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+}
 
 function operate(operator, num1, num2) {
    switch (operator) {
@@ -38,74 +52,199 @@ function operate(operator, num1, num2) {
    }
 }
 
+
+let firstoperand = ''
+let operatorVariable = ''
+let secondoperand = ''
+let numberbtncontainer = document.querySelector('.numberbtn-container')
+let display = document.querySelector('.display')
+let operatorContainer = document.querySelector('.operator-btn')
+let expressionDisplay = document.querySelector('.expression-display')
+let answerDisplay = document.querySelector('.answer-display')
+
 numberbtncontainer.addEventListener('click', function(e) {
-    console.log(e.target)
     switch (e.target.textContent) {
         case '1':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(1)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(1)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
 
         case '2':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(2)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(2)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '3':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(3)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(3)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
 
         case '4':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(4)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(4)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
 
         case '5':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(5)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(5)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '6':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(6)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(6)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '7':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(7)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(7)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '8':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(8)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(8)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '9':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(9)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(9)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case '0':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar(0)
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar(0)
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
             
         case 'C':
             updateFirstOperandVar('CL')
-            display.textContent = firstoperand
+            firstoperand = ''
+            secondoperand = ''
+            operatorVariable = ''
+            expressionDisplay.textContent = ''
             break;
             
         case '.':
+            if (operatorVariable === ' + ' ||
+                operatorVariable === ' - ' ||
+                operatorVariable === ' * ' ||
+                operatorVariable === ' / '  
+            ) {
+               displaySecondVar('.')
+               console.log(secondoperand)
+            } else 
             updateFirstOperandVar('.')
-            display.textContent = firstoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
             break;
-                
+            
     }
 } )
 
-function updateFirstOperandVar(number) {
-   return  firstoperand = number
-}
+operatorContainer.addEventListener('click', function(e) {
+    switch (e.target.textContent) {
+         case '+': 
+            updateOperatorOperandVar(' + ')
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            console.log(operatorVariable)
+            break;
 
+        case '-': 
+            updateOperatorOperandVar(' - ')
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            break;
+            
+        case '*': 
+            updateOperatorOperandVar(' * ')
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            break;
+            
+        case '/': 
+            updateOperatorOperandVar(' / ')
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            break;
+            
+        case '=': 
+            updateFirstOperandVar(' = ')
+            
+            break;    
+    }
+})
 
