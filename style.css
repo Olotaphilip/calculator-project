@@ -53,8 +53,10 @@ h1 {
 
 .expression-display {
     text-align: end;
+    padding-right: 5px;
 }
 
 .answer-display {
     text-align: end;
+    padding-right: 5px;
 }
