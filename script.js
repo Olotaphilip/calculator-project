@@ -1,18 +1,19 @@
 // below are functions for basic calculator operations// 
+
 function add(num1, num2) {
-   return num1 + num2
+   return `${+num1 + +num2}`
 }
 
 function subtract(num1, num2) {
-    return num1 - num2
+    return `${+num1 - +num2}`
 }
 
 function divide(num1, num2) {
-    return num1 / num2
+    return `${+num1 / +num2}`
 }
 
 function multiply(num1, num2) {
-    return num1 * num2
+    return `${+num1 * +num2}`
 }
 
 function updateFirstOperandVar(number) {
@@ -34,20 +35,20 @@ function displaySecondVar(number) {
 
 function operate(operator, num1, num2) {
    switch (operator) {
-     case 1: 
-     add(num1, num2)
+     case ' + ': 
+     return add(num1, num2)
      break;
 
-     case 2:
-     subtract(num1, num2)
+     case ' - ':
+     return subtract(num1, num2)
      break;
 
-     case 3:
-     divide(num1, num2)
+     case ' / ':
+     return divide(num1, num2)
      break;
 
-     case 4:
-     multiply(num1, num2)
+     case ' * ':
+     return multiply(num1, num2)
      break;
    }
 }
@@ -200,6 +201,7 @@ numberbtncontainer.addEventListener('click', function(e) {
             secondoperand = ''
             operatorVariable = ''
             expressionDisplay.textContent = ''
+            answerDisplay.textContent = ''
             break;
             
         case '.':
@@ -221,29 +223,56 @@ numberbtncontainer.addEventListener('click', function(e) {
 operatorContainer.addEventListener('click', function(e) {
     switch (e.target.textContent) {
          case '+': 
+            if (firstoperand && secondoperand) {
+               let result = operate(operatorVariable, firstoperand, secondoperand) 
+               firstoperand = result;
+               secondoperand = ''
+               operatorVariable = ' + '
+               expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            } else {
             updateOperatorOperandVar(' + ')
-            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
-            console.log(operatorVariable)
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand }
             break;
 
         case '-': 
+            if (firstoperand && secondoperand) {
+               let result = operate(operatorVariable, firstoperand, secondoperand) 
+               firstoperand = result;
+               secondoperand = ''
+               operatorVariable = ' - '
+               expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            } else {
             updateOperatorOperandVar(' - ')
-            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand }
             break;
             
         case '*': 
+            if (firstoperand && secondoperand) {
+               let result = operate(operatorVariable, firstoperand, secondoperand) 
+               firstoperand = result;
+               secondoperand = ''
+               operatorVariable = ' * '
+               expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            } else {
             updateOperatorOperandVar(' * ')
-            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand }
             break;
             
         case '/': 
+            if (firstoperand && secondoperand) {
+               let result = operate(operatorVariable, firstoperand, secondoperand) 
+               firstoperand = result;
+               secondoperand = ''
+               operatorVariable = ' / '
+               expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            } else {
             updateOperatorOperandVar(' / ')
-            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand }
             break;
             
         case '=': 
-            updateFirstOperandVar(' = ')
-            
+            let result = operate(operatorVariable, firstoperand, secondoperand)
+            answerDisplay.textContent = result
             break;    
     }
 })
