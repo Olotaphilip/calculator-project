@@ -321,7 +321,7 @@ numberbtncontainer.addEventListener('click', function(e) {
             expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand }
             break;
             
-        case 'C':
+        case 'Cl':
             updateFirstOperandVar('CL')
             firstoperand = '0'
             secondoperand = ''
@@ -416,7 +416,30 @@ operatorContainer.addEventListener('click', function(e) {
             if (result.length > 6) {answerDisplay.textContent = Number(result).toFixed(4)}
             else {answerDisplay.textContent = result}
              }
-            break;    
+            break;
+            
+        case 'CE':
+            if (operatorVariable && secondoperand) {  
+                secondoperand = secondoperand.split('').splice(0, secondoperand.length -1).join('')
+                expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand      
+            } else if (operatorVariable) {
+                operatorVariable = ''
+                expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand  
+            }
+            else {
+            if (firstoperand.length === 1 ) {
+                expressionDisplay.textContent = '0'
+                firstoperand = '0'
+                return }
+            console.log(firstoperand)   
+            firstoperand = firstoperand.split('').splice(0, firstoperand.length -1).join('') 
+            expressionDisplay.textContent = firstoperand + operatorVariable + secondoperand
+            }
+            break;   
     }
 })
 
+let str = 'abc'
+let nstr = str.split('').splice(0, 2).join('')
+console.log(str)
+console.log(nstr)
